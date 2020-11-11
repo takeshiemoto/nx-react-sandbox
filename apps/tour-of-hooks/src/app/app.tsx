@@ -22,6 +22,8 @@ export const App = () => {
         <p>Hello world</p>
         <p>Hello world</p>
         <p>Hello world</p>
+        <p>Hello world</p>
+        <p>Hello world</p>
         <UseRefLibrary />
       </Route>
     </div>
