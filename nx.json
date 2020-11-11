@@ -23,12 +23,15 @@
     }
   },
   "projects": {
-    "my-app": {
+    "tour-of-hooks": {
       "tags": []
     },
-    "my-app-e2e": {
+    "tour-of-hooks-e2e": {
       "tags": [],
-      "implicitDependencies": ["my-app"]
+      "implicitDependencies": ["tour-of-hooks"]
+    },
+    "use-ref-library": {
+      "tags": []
     }
   }
 }

@@ -1,22 +1,25 @@
 {
   "version": 1,
   "projects": {
-    "my-app": {
-      "root": "apps/my-app",
-      "sourceRoot": "apps/my-app/src",
+    "tour-of-hooks": {
+      "root": "apps/tour-of-hooks",
+      "sourceRoot": "apps/tour-of-hooks/src",
       "projectType": "application",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/web:build",
           "options": {
-            "outputPath": "dist/apps/my-app",
-            "index": "apps/my-app/src/index.html",
-            "main": "apps/my-app/src/main.tsx",
-            "polyfills": "apps/my-app/src/polyfills.ts",
-            "tsConfig": "apps/my-app/tsconfig.app.json",
-            "assets": ["apps/my-app/src/favicon.ico", "apps/my-app/src/assets"],
-            "styles": ["apps/my-app/src/styles.css"],
+            "outputPath": "dist/apps/tour-of-hooks",
+            "index": "apps/tour-of-hooks/src/index.html",
+            "main": "apps/tour-of-hooks/src/main.tsx",
+            "polyfills": "apps/tour-of-hooks/src/polyfills.ts",
+            "tsConfig": "apps/tour-of-hooks/tsconfig.app.json",
+            "assets": [
+              "apps/tour-of-hooks/src/favicon.ico",
+              "apps/tour-of-hooks/src/assets"
+            ],
+            "styles": ["apps/tour-of-hooks/src/styles.css"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -24,8 +27,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/my-app/src/environments/environment.ts",
-                  "with": "apps/my-app/src/environments/environment.prod.ts"
+                  "replace": "apps/tour-of-hooks/src/environments/environment.ts",
+                  "with": "apps/tour-of-hooks/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -48,51 +51,72 @@
         "serve": {
           "builder": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "my-app:build"
+            "buildTarget": "tour-of-hooks:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "my-app:build:production"
+              "buildTarget": "tour-of-hooks:build:production"
             }
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/my-app/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": ["apps/tour-of-hooks/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/my-app/jest.config.js",
+            "jestConfig": "apps/tour-of-hooks/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "my-app-e2e": {
-      "root": "apps/my-app-e2e",
-      "sourceRoot": "apps/my-app-e2e/src",
+    "tour-of-hooks-e2e": {
+      "root": "apps/tour-of-hooks-e2e",
+      "sourceRoot": "apps/tour-of-hooks-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/my-app-e2e/cypress.json",
-            "tsConfig": "apps/my-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "my-app:serve"
+            "cypressConfig": "apps/tour-of-hooks-e2e/cypress.json",
+            "tsConfig": "apps/tour-of-hooks-e2e/tsconfig.e2e.json",
+            "devServerTarget": "tour-of-hooks:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-app:serve:production"
+              "devServerTarget": "tour-of-hooks:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/my-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/tour-of-hooks-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "use-ref-library": {
+      "root": "libs/use-ref-library",
+      "sourceRoot": "libs/use-ref-library/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/use-ref-library/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/use-ref-library/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -117,5 +141,5 @@
       }
     }
   },
-  "defaultProject": "my-app"
+  "defaultProject": "tour-of-hooks"
 }

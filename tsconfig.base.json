@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-react-sandbox/use-ref-library": ["libs/use-ref-library/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
