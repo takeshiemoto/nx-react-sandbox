@@ -21,6 +21,7 @@ export const App = () => {
       <Route path={'/'} exact>
         <p>Hello world</p>
         <p>Hello world</p>
+        <p>Hello world</p>
         <UseRefLibrary />
       </Route>
     </div>

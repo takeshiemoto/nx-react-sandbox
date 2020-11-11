@@ -74,12 +74,12 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run format:write -- --uncommitted"
+      "pre-push": "yarn run affected:lint  -- --uncommitted --fix --parallel --maxParallel=10"
     }
   },
   "lint-staged": {
     "{apps,libs}/**/*.{graphql,ts,tsx,json,md,scss}": [
-      "yarn run affected:lint  -- --uncommitted --fix --parallel --maxParallel=5"
+      "yarn run affected:lint  -- --uncommitted --fix --parallel --maxParallel=10"
     ]
   }
 }
