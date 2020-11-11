@@ -64,6 +64,7 @@
     "eslint-plugin-react-hooks": "4.0.4",
     "husky": "^4.3.0",
     "jest": "26.2.2",
+    "lint-staged": "^10.5.1",
     "prettier": "2.0.4",
     "ts-jest": "26.4.0",
     "ts-node": "~7.0.0",
@@ -72,7 +73,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "nx format:write --uncommited"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run format:write -- --uncommitted"
     }
+  },
+  "lint-staged": {
+    "{apps,libs}/**/*.{graphql,ts,tsx,json,md,scss}": [
+      "yarn run affected:lint  -- --uncommitted --fix --parallel --maxParallel=5"
+    ]
   }
 }
