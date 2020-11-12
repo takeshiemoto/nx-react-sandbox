@@ -16,7 +16,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-react-sandbox/use-ref-library": ["libs/use-ref-library/src/index.ts"]
+      "@nx-react-sandbox/use-ref-library": [
+        "libs/use-ref-library/src/index.ts"
+      ],
+      "@nx-react-sandbox/react-memo-library": [
+        "libs/react-memo-library/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

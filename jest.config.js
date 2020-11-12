@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/my-app',
     '<rootDir>/apps/tour-of-hooks',
     '<rootDir>/libs/use-ref-library',
+    '<rootDir>/libs/react-memo-library',
   ],
 };

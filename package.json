@@ -74,7 +74,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run affected:lint  -- --uncommitted --fix --parallel --maxParallel=5"
+      "pre-push": "yarn run affected:lint --uncommitted --fix --parallel --maxParallel=5"
     }
   },
   "lint-staged": {

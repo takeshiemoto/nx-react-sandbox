@@ -32,6 +32,9 @@
     },
     "use-ref-library": {
       "tags": []
+    },
+    "react-memo-library": {
+      "tags": []
     }
   }
 }
