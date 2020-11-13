@@ -5,6 +5,7 @@ import './app.css';
 import { Route, Link } from 'react-router-dom';
 import { UseRefLibrary } from '@nx-react-sandbox/use-ref-library';
 import { ReactMemoLibrary } from '@nx-react-sandbox/react-memo-library';
+import CustomHooks from './screens/CustomHooks';
 
 type RouteType = {
   path: string;
@@ -23,6 +24,10 @@ const ROUTES: RouteType[] = [
   {
     path: 'react-memo',
     name: 'React.Memo Example',
+  },
+  {
+    path: 'custom-hooks',
+    name: 'Custom Hooks',
   },
 ];
 
@@ -43,6 +48,9 @@ export const App = () => {
       </Route>
       <Route path={'/react-memo'} exact>
         <ReactMemoLibrary />
+      </Route>
+      <Route path={'/custom-hooks'} exact>
+        <CustomHooks />
       </Route>
     </div>
   );

@@ -21,7 +21,8 @@
       ],
       "@nx-react-sandbox/react-memo-library": [
         "libs/react-memo-library/src/index.ts"
-      ]
+      ],
+      "@nx-react-sandbox/hooks": ["libs/hooks/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
