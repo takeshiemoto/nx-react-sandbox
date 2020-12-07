@@ -25,6 +25,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       count: new Date().toISOString(),
     },
-    revalidate: 1,
+    revalidate: 3,
   };
 };
