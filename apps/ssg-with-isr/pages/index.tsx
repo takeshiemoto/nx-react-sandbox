@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
-import fetch from 'node-fetch';
 
 interface Response {
   count: string;
@@ -22,12 +21,9 @@ export function Index({ count }: Response) {
 export default Index;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { count } = await fetch('http://localhost:4200/api/user')
-    .then((res) => res.json())
-    .then((res) => res as Response);
   return {
     props: {
-      count,
+      count: new Date().toISOString(),
     },
   };
 };
