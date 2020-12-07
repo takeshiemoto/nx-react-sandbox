@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/use-ref-library',
     '<rootDir>/libs/react-memo-library',
     '<rootDir>/libs/hooks',
+    '<rootDir>/apps/ssg-with-isr',
   ],
 };

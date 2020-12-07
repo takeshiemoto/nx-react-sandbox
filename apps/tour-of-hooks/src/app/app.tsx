@@ -6,6 +6,7 @@ import { Route, Link } from 'react-router-dom';
 import { UseRefLibrary } from '@nx-react-sandbox/use-ref-library';
 import { ReactMemoLibrary } from '@nx-react-sandbox/react-memo-library';
 import CustomHooks from './screens/CustomHooks';
+import { ImmerExample } from './screens/ImmerExample';
 
 type RouteType = {
   path: string;
@@ -16,6 +17,10 @@ const ROUTES: RouteType[] = [
   {
     path: '/',
     name: 'Home',
+  },
+  {
+    path: '/immer-example',
+    name: 'Immer Example',
   },
   {
     path: 'use-ref',
@@ -51,6 +56,9 @@ export const App = () => {
       </Route>
       <Route path={'/custom-hooks'} exact>
         <CustomHooks />
+      </Route>
+      <Route path={'/immer-example'} exact>
+        <ImmerExample />
       </Route>
     </div>
   );

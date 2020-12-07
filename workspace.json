@@ -162,6 +162,82 @@
           }
         }
       }
+    },
+    "ssg-with-isr": {
+      "root": "apps/ssg-with-isr",
+      "sourceRoot": "apps/ssg-with-isr",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/ssg-with-isr",
+            "outputPath": "dist/apps/ssg-with-isr"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "ssg-with-isr:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ssg-with-isr:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "ssg-with-isr:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/ssg-with-isr/**/*.{ts,tsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/ssg-with-isr/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ssg-with-isr-e2e": {
+      "root": "apps/ssg-with-isr-e2e",
+      "sourceRoot": "apps/ssg-with-isr-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ssg-with-isr-e2e/cypress.json",
+            "tsConfig": "apps/ssg-with-isr-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ssg-with-isr:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ssg-with-isr:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/ssg-with-isr-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -179,6 +255,12 @@
       },
       "library": {
         "style": "css",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "styled-components",
         "linter": "eslint"
       }
     }

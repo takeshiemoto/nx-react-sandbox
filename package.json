@@ -27,12 +27,17 @@
   },
   "private": true,
   "dependencies": {
+    "@types/node-fetch": "^2.5.7",
     "document-register-element": "1.13.1",
+    "immer": "^8.0.0",
+    "next": "10.0.0",
+    "node-fetch": "^2.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-is": "16.13.1",
     "react-router-dom": "5.2.0",
-    "styled-components": "5.1.1"
+    "styled-components": "5.1.1",
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
@@ -43,6 +48,7 @@
     "@nrwl/cypress": "10.3.3",
     "@nrwl/eslint-plugin-nx": "10.3.3",
     "@nrwl/jest": "10.3.3",
+    "@nrwl/next": "^10.4.4",
     "@nrwl/react": "10.3.3",
     "@nrwl/web": "10.3.3",
     "@nrwl/workspace": "10.3.3",

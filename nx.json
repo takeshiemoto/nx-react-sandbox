@@ -38,6 +38,13 @@
     },
     "hooks": {
       "tags": []
+    },
+    "ssg-with-isr": {
+      "tags": []
+    },
+    "ssg-with-isr-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ssg-with-isr"]
     }
   }
 }
